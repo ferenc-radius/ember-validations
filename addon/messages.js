@@ -7,8 +7,8 @@ export default {
       return Ember.I18n.t('errors.' + attribute, context);
 
     // Ember-gettext
-    } else if(Ember.I18n && i18n._t) {
-      return Ember.I18n._t("errors." + attribute, context);
+    } else if(Ember.I18n && Ember.I18n._t) {
+      return Ember.I18n._t(this.defaults[attribute], context);
 
     } else {
       var regex = new RegExp("{{(.*?)}}"),
